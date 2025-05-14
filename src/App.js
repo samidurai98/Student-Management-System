@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
+import Student1 from './project/Student';
+import Studentmark from './project/Studentmark';
+import Signupex from './project/singn';
+import Logex from './project/login';
+import Weather from './project/Whetherapi';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div > 
+      <BrowserRouter>
+      <Routes> 
+        <Route path="/Student" element={<Student1/>}></Route>
+        <Route path="/Studentmark" element={<Studentmark/>}></Route>
+        <Route path="/signup" element={<Signupex/>}></Route>
+        <Route path="/" element={<Logex/>}></Route>
+       <Route path="/Weather" element={<Weather/>}></Route>    
+         </Routes>
+      </BrowserRouter>
     </div>
   );
 }
